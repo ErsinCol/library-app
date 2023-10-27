@@ -24,7 +24,38 @@
                 </button>
             </div>
         </div>
-        <div id="main-content"></div>
+        <div id="main-content">
+
+        </div>
+
+        <dialog class="modal">
+            <form>
+                <div class="form-header">
+                    <div class="form-title">Add New Book</div>
+                    <button class="close-btn">
+                        <img src="assets/close.svg" alt="close-icon">
+                    </button>
+                </div>
+                <div class="input-control">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" class="input-text">
+                </div>
+                <div class="input-control">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" class="input-text">
+                </div>
+                <div class="input-control">
+                    <label for="page">Page</label>
+                    <input type="text" name="page" id="page" class="input-text">
+                </div>
+                <div class="checkbox-control">
+                    <input type="checkbox" name="is_read" id="is_read">
+                    <label for="is_read">Is Read</label>
+                </div>
+                <button type="submit" class="submit-btn">Save</button>
+            </form>
+        </dialog>
+
     </div>
 
     <script src="index.js"></script>
