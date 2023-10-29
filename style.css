@@ -209,7 +209,8 @@ td {
 }
 
 td:last-child {
-    padding: 0;
+    padding: 0 0.25rem 0 0;
+    text-align: right;
 }
 
 tr {
