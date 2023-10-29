@@ -12,7 +12,7 @@ html, body {
 }
 
 #header {
-    background-color: #e2e8f0;
+    background-color: #3d6cb9;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,11 +34,11 @@ html, body {
 .title-text {
     font-weight: bold;
     font-size: 1.75rem;
-    color:  #1e293b;
+    color:  #fafaf6;
 }
 
 #main-content {
-    background-color: #fff;
+    background-color: #fafaf6;
 }
 
 .new-book-btn {
@@ -48,7 +48,7 @@ html, body {
     cursor: pointer;
     text-align: center;
     font-size: 1rem;
-    background-color: #22c55e;
+    background-color: #00d1ff;
     color: #fff;
     padding: 0.75rem 1.25rem;
     border-radius: 0.325rem;
@@ -56,7 +56,7 @@ html, body {
 }
 
 .new-book-btn:hover {
-    background-color: #16a34a;
+    background-color: #0ea5e9;
 }
 
 .plus-icon {
@@ -195,6 +195,11 @@ th {
     background-color: #f1f5f9;
 }
 
+th:last-child {
+    width: 5rem;
+    padding: 0;
+}
+
 td {
     text-align: left;
     border: solid #e5e7eb;
@@ -203,7 +208,43 @@ td {
     color: #4b5563;
 }
 
+td:last-child {
+    padding: 0;
+}
+
+tr {
+    background-color: #fff;
+}
+
 tr:hover {
     background-color: #f8fafc;
+}
+
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.delete-btn:hover {
+    background-color: #f1f5f9;
+}
+
+.delete-btn:active {
+    background-color: #fee2e2;
+}
+
+.delete-btn:focus {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #ef4444, 0 1px 2px 0 black
+}
+
+.delete-icon {
+    width: 1rem;
+    height: 1rem;
 }
 

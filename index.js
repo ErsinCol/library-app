@@ -6,22 +6,21 @@ const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const numberOfPages = document.querySelector("#page");
 const isRead = document.querySelector("#is_read");
-const htmlBodyElement = document.querySelector("body");
 const htmlTBodyEl = document.querySelector("tbody");
 
 const library = [
-    {
-        author: "Ersin",
-        title: "Sefiller",
-        numberOfPages: 124,
-        isRead: true,
-    },
-    {
-        author: "Sevgi",
-        title: "Suç ve Ceza",
-        numberOfPages: 300,
-        isRead: false,
-    }
+        {
+            title: "Yaşlı Adam ve Deniz",
+            author: "Ernest Hemingway",
+            numberOfPage: 88,
+            isRead: "yes"
+        },
+        {
+            title: "Martin Eden",
+            author: "Jack London",
+            numberOfPage: 125,
+            isRead: "no"
+        },
 ];
 
 function Book(author, title, numberOfPages, isRead){
@@ -32,14 +31,8 @@ function Book(author, title, numberOfPages, isRead){
 }
 
 function addBookToLibrary(book){
-    const tableRow = document.createElement("tr");
-    for (const field in book) {
-        const tableCell = document.createElement("td")
-        tableCell.innerText = book[field]
-        tableRow.appendChild(tableCell);
-    }
-    htmlTBodyEl.appendChild(tableRow);
     library.push(book);
+    renderBook(book);
 }
 
 function resetForm(){
@@ -49,11 +42,39 @@ function resetForm(){
     isRead.checked = false;
 }
 
+function renderBook(book, index){
+    const row = document.createElement("tr");
+    for (const field in book) {
+        const cell = document.createElement("td");
+        cell.innerText = book[field];
+        row.appendChild(cell);
+    }
+    const actionCell = document.createElement("td");
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "delete-btn";
+    removeBtn.dataset.indexNumber = `${index}`;
+    removeBtn.addEventListener("click", (event)=>{
+        const selectedBookIndex = event.target.dataset.indexNumber;
+        library.splice(parseInt(selectedBookIndex), 1);
+        htmlTBodyEl.removeChild(row);
+    })
+    const removeIcon = document.createElement("img");
+    removeIcon.src = "assets/delete-outline.svg";
+    removeIcon.alt = "delete-icon";
+    removeIcon.className = "delete-icon";
+
+    removeBtn.appendChild(removeIcon);
+    actionCell.appendChild(removeBtn);
+    row.appendChild(actionCell);
+    htmlTBodyEl.appendChild(row);
+}
+
 newBookBtn.addEventListener("click", ()=>{
     modal.showModal();
 })
 
 closeBtn.addEventListener("click", ()=>{
+    resetForm();
     modal.close();
 })
 
@@ -65,23 +86,7 @@ submitBtn.addEventListener("click", (event)=>{
     modal.close();
 })
 
-
-const fillTable = ()=>{
-    const tableRows = [];
-    library.forEach((book)=>{
-        const currentTableRow = document.createElement("tr")
-        for(const field in book){
-            const currentTableCell = document.createElement("td")
-            currentTableCell.innerText = book[field];
-            currentTableRow.appendChild(currentTableCell);
-        }
-        tableRows.push(currentTableRow);
-    })
-
-    tableRows.forEach((tableRow)=>{
-        htmlTBodyEl.appendChild(tableRow)
-    })
-}
+library.forEach(renderBook);
 
 
 
