@@ -179,4 +179,31 @@ html, body {
     background-color: #2563eb;
 }
 
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    border: solid #e5e7eb;
+    border-width: 0 0 1px 0;
+    color: #374151;
+    background-color: #f1f5f9;
+}
+
+td {
+    text-align: left;
+    border: solid #e5e7eb;
+    border-width: 0 0 1px 0;
+    padding: 1rem;
+    color: #4b5563;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
 
