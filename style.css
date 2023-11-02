@@ -3,10 +3,6 @@ html, body {
     margin: 0;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 #app {
     width: 100%;
     height: 100%;
@@ -25,6 +21,7 @@ body {
 .app-title {
     display: flex;
     align-items: center;
+    padding-right: 1rem;
 }
 
 .bookshelf {
@@ -36,11 +33,12 @@ body {
     font-weight: bold;
     font-size: 1.75rem;
     color:  #F6F1F1;
+    white-space: nowrap;
 }
 
 #main-content{
     max-height: 100%;
-    overflow-y: auto;
+    overflow: auto;
     background-color: #fafaf6;
 }
 
@@ -78,6 +76,7 @@ body {
 .new-book-btn-text {
     margin-top: 0.10rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .modal {
@@ -191,18 +190,21 @@ body {
 
 table {
     width: 100%;
-    table-layout: fixed;
     border-collapse: collapse;
+    border-spacing: 0;
+    position: relative;
 }
 
 th {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     text-align: left;
     font-weight: bold;
     border: solid #e5e7eb;
     border-width: 0 0 1px 0;
     color: #374151;
     background-color: #e2e8f0;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 th:last-child {
@@ -225,6 +227,7 @@ td {
     border-width: 0 0 1px 0;
     padding: 1rem;
     color: #4b5563;
+    white-space: nowrap;
 }
 
 td.status-cell {
@@ -329,7 +332,7 @@ tr:hover {
 
 ::-webkit-scrollbar {
     width: 0.5rem;
-    height: 0.5rem;
+    height: 0;
 }
 ::-webkit-scrollbar-track {
     border-radius: 0.5rem;
@@ -341,4 +344,3 @@ tr:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #bfbfbf;
 }
-
