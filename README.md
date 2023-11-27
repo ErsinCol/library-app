@@ -5,9 +5,9 @@ This project was developed as part of The Odin Project's Node.js and JavaScript 
 Project link: https://www.theodinproject.com/lessons/node-path-javascript-library
 
 ### Technologies Used
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3
+- JavaScript, Javascript Classes
 
 ### Live Preview
 https://ersincol.github.io/library-app
